@@ -38,7 +38,7 @@ public class Main {
         cantStringsConXletra(stringList, "m");
 
         //Ejercicio6
-
+        ordenarAlfabeticamente(stringList);
     }
 
     // Ejercicio1 Write a Java program to calculate the average of a list of integers
@@ -81,6 +81,11 @@ public class Main {
 
     //Ejercicio6 Write a Java program to sort a list of strings in alphabetical order,
     // ascending and descending using streams.
-    
+    public static void ordenarAlfabeticamente (List<String> listaString){
+        List<String> listaOrdenada = listaString.stream().sorted().collect(Collectors.toList());
+        System.out.println(listaOrdenada);
+        List<String> listDesordenada = listaString.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println(listDesordenada);
+    }
 
 }
